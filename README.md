@@ -150,44 +150,6 @@ data %>%
 Task: List the 10 strongest earthquakes happening in and around Valparaiso 
 (Bonus: Display the year of these events).
 
-## Solution
-
-Strongest earthquakes in Valparaiso
-
-```{r sol2,echo=TRUE,eval=TRUE}
-data %>%
-  select(mag,place) %>%
-  mutate(country=place %>% strsplit(split=", ") %>% 
-           lapply(function(x) x <- x[2]) %>% unlist()) %>%
-  filter(country=="Chile") %>%
-  mutate(region=place %>% strsplit(split=" of |, ") %>% 
-           lapply(function(x) x <- x[length(x)-1]) %>% unlist()) %>%
-  filter(region=="Valparaiso") %>%
-  arrange(desc(mag)) %>%
-  data.frame() %>%
-  top_n(10,mag)
-```
-
-
-## Solution
-
-Strongest earthquakes in Valparaiso with year
-
-```{r sol3,echo=TRUE,eval=TRUE}
-data %>%
-  select(mag,place,time) %>%
-  mutate(year=substr(time,1,4)) %>%
-  select(-time) %>%
-  mutate(country=place %>% strsplit(split=", ") %>% 
-           lapply(function(x) x <- x[2]) %>% unlist()) %>%
-  filter(country=="Chile") %>%
-  mutate(region=place %>% strsplit(split=" of |, ") %>% 
-           lapply(function(x) x <- x[length(x)-1]) %>% unlist()) %>%
-  filter(region=="Valparaiso") %>%
-  arrange(desc(mag)) %>%
-  data.frame() %>%
-  top_n(10,mag)
-```
 
 ## Want to know more?
 
