@@ -12,7 +12,7 @@
 ## The dataset
 
 ```{r dataset2,echo=TRUE,eval=FALSE}
-data <- read.csv("Earthquakes Chile.csv",stringsAsFactors = F,skip=9)
+data <- read.csv("LINK2019-master/Earthquakes Chile.csv",stringsAsFactors = F,skip=9)
 head(data)
 ```
 
