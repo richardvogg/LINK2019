@@ -1,5 +1,8 @@
 # LINK2019
 
+I used this tutorial during the LINK Conference in Viña del Mar, Chile to show how R can help with Data Exploration.
+As Chile is frequently affected by earthquakes, the participants were taught and invited to get insights related to this topic. The data can be downloaded [here](https://earthquake.usgs.gov/earthquakes/search/).
+
 # Data Manipulation with R
 
 ## 30 Minutes: What are we going to learn?
